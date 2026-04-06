@@ -5,3 +5,7 @@ env/
 *.egg-info
 build/
 test_install/
+*/__pycache__/
+menoa.egg-info/
+test_install/
+dist/

@@ -60,7 +60,7 @@ import menoa.utils.script_utils as script_utils
 console = Console()
 
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
-@click.version_option(version="0.1.0", prog_name="cli_tool")
+@click.version_option(version="0.6.0", prog_name="Menoa")
 def cli():
     """
     The CLI frontend for Menoa. See menoa.org/docs more information 
@@ -74,6 +74,8 @@ def clam():
     pass
 
 def scan(path):
+    import menoa.utils.clam_utils as clam_utils
+
     console.print("[yellow]Counting total files...  [/yellow]", end='')
     total_files = clam_utils.get_scan_total(path)
     print(total_files)

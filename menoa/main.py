@@ -1,3 +1,12 @@
+import time
+
+BIG_TIME=time.time()
+
+def log(t, BIG_TIME):
+    print(t, time.time()-BIG_TIME)
+    BIG_TIME=time.time()
+    return BIG_TIME
+
 import sys
 from PySide6.QtCore import Qt, QSize, QPropertyAnimation, QEasingCurve, Signal
 from PySide6.QtWidgets import QApplication, QWidget, QListWidget, QListWidgetItem, QHBoxLayout, QStackedWidget, QLabel, QVBoxLayout, QGridLayout, QFrame, QSizePolicy, QScrollArea, QToolButton, QDialog, QDialogButtonBox, QPushButton, QTextEdit
@@ -6,12 +15,30 @@ from PySide6.QtCore import QUrl, QEvent
 import importlib.resources as pkg_resources
 from pathlib import Path
 
+BIG_TIME = log(1, BIG_TIME)
+
 from menoa.pages.network_page import NetworkPage
+BIG_TIME = log(1.1, BIG_TIME)
+
 from menoa.pages.clam_page import ClamPage
+BIG_TIME = log(1.2, BIG_TIME)
+
 from menoa.pages.attestation_page import AttestationPage
-from menoa.pages.process_page import ProcessPage, PredictionEngine
+BIG_TIME = log(1.3, BIG_TIME)
+
+from menoa.pages.process_page import ProcessPage
+BIG_TIME = log(1.4, BIG_TIME)
+
+from menoa.pages.process_page import PredictionEngine
+BIG_TIME = log(1.45, BIG_TIME)
+
+
 from menoa.pages.script_page import ScriptPage
+BIG_TIME = log(1.5, BIG_TIME)
+
 from menoa.utils.utils import get_enabled_tools
+
+BIG_TIME = log(2, BIG_TIME)
 
 # Fixed width for dashboard cards (pixels). Adjust this value if you change the
 # application minimum width or the number of columns in the grid.
@@ -239,7 +266,7 @@ class DashboardPage(QWidget):
                 "https://github.com/ThisIsNotANamepng/Menoa/wiki/Tools#process",
             ),
             (
-                "Attestation",
+                "Attestation (beta)",
                 "Binary attestation",
                 "Compares the hashes of local binaries in /bin against a list of correct hashes for Linux binaries.",
                 "https://github.com/ThisIsNotANamepng/Menoa/wiki/Tools#attestation",

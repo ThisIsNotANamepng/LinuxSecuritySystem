@@ -1,11 +1,20 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
+
 setup(
     name="menoa",
-    version="0.5.0",
+    version="0.6.0",
     author="Jack Hagen",
+    author_email="jack@example.com",
     description="Menoa Linux Security Suite",
-    packages=find_packages(),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/JackHagen/menoa",
+    license="MIT",
+    python_requires=">=3.11",
+    packages=find_packages(include=["menoa", "menoa.*"]),
     install_requires=[
         "bidict==0.23.1",
         "certifi==2025.7.14",
@@ -37,7 +46,6 @@ setup(
         "rich==14.0.0",
         "scikit-learn==1.7.1",
         "scipy==1.16.0",
-        "setuptools==80.9.0",
         "shellingham==1.5.4",
         "shiboken6==6.9.1",
         "six==1.17.0",
@@ -68,8 +76,17 @@ setup(
         ],
     },
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System Administrators",
+        "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Topic :: Security",
     ],
-
+    project_urls={
+        "Source": "https://github.com/JackHagen/menoa",
+    },
 )

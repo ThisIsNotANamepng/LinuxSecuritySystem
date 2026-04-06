@@ -305,11 +305,11 @@ def rewrite():
 
     try:
         shutil.rmtree(str(Path.home())+"/.menoa")
-    except:
+    except Exception as e:
+        print(e)
         pass
 
     initialize_config()
-
 
 def initialize():
     initialize_desktop_file()
